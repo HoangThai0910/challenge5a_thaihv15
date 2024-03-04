@@ -45,7 +45,7 @@ if (strlen($_SESSION['id'])==0){
                                                 <tbody>
                                                     <?php
                                                     
-                                                    $sql ="SELECT id,hoten,filename FROM nguoidung, bailam WHERE nguoidung.id=bailam.student_id AND bailam.solve_id=:tid";
+                                                    $sql ="SELECT id,hoten,filename FROM nguoidung, bailam WHERE nguoidung.id=bailam.student_id AND bailam.task_id=:tid";
                                                     $query=$dbh->prepare($sql);
                                                     $query->bindParam(':tid',$tid,PDO::PARAM_STR);
                                                     $query->execute();
