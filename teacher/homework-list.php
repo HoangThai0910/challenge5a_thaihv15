@@ -65,7 +65,7 @@ if (strlen($_SESSION['id'])==0){
                                                             <tr>
                                                                 <td><?php  echo htmlentities($row->task_id);?></td>
                                                                 <td>
-                                                                    <div><a href="../baitap/<?php echo htmlentities($row->filename);?>"><?php echo htmlentities($row->filename) ?></a>
+                                                                    <div><a href="../baitap/<?php echo htmlentities($row->filename);?>" download><?php echo htmlentities($row->filename) ?></a>
                                                                     </div>
                                                                 </td>
                                                                 <td>
