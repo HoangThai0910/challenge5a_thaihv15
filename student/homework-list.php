@@ -68,7 +68,7 @@ if (strlen($_SESSION['id'])==0){
                                                                 <td><?php  echo htmlentities($row->task_id);?></td>
                                                                 <td><?php  echo htmlentities($row->filename);?></td>
                                                                 <td>
-                                                                    <div><a href="../baitap/<?php echo htmlentities($row->filename);?>">Download</a>
+                                                                    <div><a href="../baitap/<?php echo htmlentities($row->filename);?>" download>Download</a>
                                                                     </div>
                                                                 </td>
                                                         <?php
@@ -80,7 +80,7 @@ if (strlen($_SESSION['id'])==0){
                                                             $res=$q->fetch(PDO::FETCH_OBJ);
                                                             if ($q->rowCount()>0){ ?>
                                                                 <td>
-                                                                    <div><a href="../bailam/<?php echo htmlentities($res->filename);?>">Đã hoàn thành</a>
+                                                                    <div><a href="../bailam/<?php echo htmlentities($res->filename);?>" download>Đã hoàn thành</a>
                                                                     </div>
                                                                 </td>
                                                             <?php } else { ?>
