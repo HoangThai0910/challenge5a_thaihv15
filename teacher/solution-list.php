@@ -56,7 +56,7 @@ if (strlen($_SESSION['id'])==0){
                                                                 <td><?php  echo htmlentities($row->id);?></td>
                                                                 <td><?php  echo htmlentities($row->hoten);?></td>
                                                                 <td>
-                                                                    <div><a href="../bailam/<?php echo htmlentities($row->filename);?>"><?php echo htmlentities($row->filename) ?></a>
+                                                                    <div><a href="../bailam/<?php echo htmlentities($row->filename);?>" download><?php echo htmlentities($row->filename) ?></a>
                                                                     </div>
                                                                 </td>
                                                             </tr><?php
