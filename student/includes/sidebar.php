@@ -6,7 +6,7 @@
   $q->execute();
   $res=$q->fetch(PDO::FETCH_OBJ);
   $image="";
-  if ($q->rowCount()>0){
+  if (isset($res->Image){
     $image=$res->Image;
   } else {
     $image="faces/face8.jpg";
