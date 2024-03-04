@@ -13,7 +13,7 @@ if (strlen($_SESSION['id'])==0){
         if(!in_array($extension,$allowed_extensions)) {
             echo "<script>alert('Invalid format. Only txt / doc / docx / pdf format allowed');</script>";
         } else { 
-            move_uploaded_file($_FILES["homework"]["tmp_name"],"../bailam/.$homework");
+            move_uploaded_file($_FILES["homework"]["tmp_name"],"../bailam/".$homework);
             $sql="insert into bailam(task_id,student_id,filename) values(:tid,:uid,:filename)";
             $query=$dbh->prepare($sql);
             $query->bindParam(':tid',$tid,PDO::PARAM_STR);
