@@ -10,7 +10,10 @@ CREATE TABLE nguoidung(
 );
 
 INSERT INTO nguoidung(tendangnhap,hoten,matkhau,email,sodienthoai,role) VALUES ('hvt','Hoang Van Thai','hvt','hvt@gmail.com','0879102003','sinhvien'),
-('teacher1','Nguyen Van A','123456a@A','teacher1@gmail.com','0123456789','giaovien')
+('student1','Hoang Van Thai','123456a@A','student1@gmail.com','0123456789','sinhvien'),
+('student2','Le Duc Anh','123456a@A','student2@gmail.com','0123456789','sinhvien'),
+('teacher1','Nguyen Van A','123456a@A','teacher1@gmail.com','0123456789','giaovien'),
+('teacher2','Nguyen Van B','123456a@A','teacher2@gmail.com','0123456789','giaovien');
 
 create table tinnhan(
 receiver_id int,
