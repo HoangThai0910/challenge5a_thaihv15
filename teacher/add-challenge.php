@@ -11,7 +11,7 @@ if (strlen($_SESSION['id'])==0){
         if($extension!==$allowed_extensions) {
             echo "<script>alert('Invalid format. Only txt format allowed');</script>";
         } else { 
-            move_uploaded_file($_FILES["challenge"]["tmp_name"],"../challenge/.$challenge");
+            move_uploaded_file($_FILES["challenge"]["tmp_name"],"../challenge/".$challenge);
             $hint=$_POST['hint'];
             $sql="insert into challenge(cname,hint) values(:filename,:hint)";
             $query=$dbh->prepare($sql);
