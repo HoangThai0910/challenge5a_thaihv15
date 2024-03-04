@@ -23,7 +23,7 @@ if (strlen($_SESSION['id']==0)) {
     $query->bindParam(':eid',$eid,PDO::PARAM_STR);
     $query->execute();
     echo '<script>alert("Student has been updated")</script>';
-    echo "<script>window.location.href ='manage-students.php'</script>";
+    echo "<script>window.location.href ='users-list.php'</script>";
   }
 
   if (isset($_POST['submit-msg'])){
@@ -150,21 +150,24 @@ foreach($results as $row)
                       </div><?php $cnt=$cnt+1;}} ?>
                       <button type="submit" class="btn btn-primary mr-2" name="submit">Update</button>
 
-                      <h3>Để lại lời nhắn</h3>
-                      <?php
-                        $senderid=$_SESSION['id'];
-                        $msg_sql="SELECT * FROM tinnhan WHERE receiver_id=:eid AND sender_id=:senderid";
-                        $q = $dbh -> prepare($msg_sql);
-                        $q->bindParam(':eid',$eid,PDO::PARAM_STR);
-                        $q->bindParam(':senderid',$senderid,PDO::PARAM_STR);
-                        $q->execute();
-                        $res=$q->fetch(PDO::FETCH_OBJ);
-                      ?>
-                      <div class="form-group">
-                        <input type="text" name="message" value="<?php  echo htmlentities($res->msg);?>" class="form-control" required='true'>
-                      </div>
-                      <button type="submit" class="btn btn-primary mr-2" name="submit-msg">Add</button> 
 
+                    </form>
+                    
+                    <form class="forms-sample" method="post" enctype="multipart/form-data">
+                      <h3>Để lại lời nhắn</h3>
+                        <?php
+                          $senderid=$_SESSION['id'];
+                          $msg_sql="SELECT * FROM tinnhan WHERE receiver_id=:eid AND sender_id=:senderid";
+                          $q = $dbh -> prepare($msg_sql);
+                          $q->bindParam(':eid',$eid,PDO::PARAM_STR);
+                          $q->bindParam(':senderid',$senderid,PDO::PARAM_STR);
+                          $q->execute();
+                          $res=$q->fetch(PDO::FETCH_OBJ);
+                        ?>
+                        <div class="form-group">
+                          <input type="text" name="message" value="<?php  echo htmlentities($res->msg);?>" class="form-control" required='true'>
+                        </div>
+                      <button type="submit" class="btn btn-primary mr-2" name="submit-msg">Add</button> 
                     </form>
                   </div>
                 </div>
