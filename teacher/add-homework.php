@@ -11,7 +11,7 @@ if (strlen($_SESSION['id'])==0){
         if(!in_array($extension,$allowed_extensions)) {
             echo "<script>alert('Invalid format. Only txt / doc / docx / pdf format allowed');</script>";
         } else { 
-            move_uploaded_file($_FILES["homework"]["tmp_name"],"../baitap/.$homework");
+            move_uploaded_file($_FILES["homework"]["tmp_name"],"../baitap/".$homework);
             $sql="insert into baitap(filename) values(:filename)";
             $query=$dbh->prepare($sql);
             $query->bindParam(':filename',$homework,PDO::PARAM_STR);
